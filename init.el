@@ -118,7 +118,7 @@
 (global-unset-key [mouse-2])
 
 ; Bright-red TODOs
- (setq fixme-modes '(c++-mode c-mode emacs-lisp-mode))
+ (setq fixme-modes '(c++-mode c-mode emacs-lisp-mode php-mode))
  (make-face 'font-lock-fixme-face)
  (make-face 'font-lock-note-face)
  (mapc (lambda (mode)
@@ -255,11 +255,11 @@
      (interactive)
      (setq BaseFileName (file-name-sans-extension (file-name-nondirectory buffer-file-name)))
      (insert "/* ========================================================================\n")
-      (insert "   ***|Lions Development Team|*** $\n")
-     (insert "   ***|www.lionsdevteam.com|*** $\n")
+      (insert "   ***|MightCore Development Team|*** $\n")
+     (insert "   ***|www.mightcore.com|*** $\n")
      (insert "   ")
      (insert "   @bigi $\n")
-     (insert "   *!* Copyright Lions Development Team *!* $\n")
+     (insert "   *!* Copyright MightCore Development Team *!* $\n")
      (insert "   ======================================================================== */\n")
   )
 
@@ -600,12 +600,6 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;; ADDED FOR PHP 
-
-;;; php-mode.el --- Major mode for editing PHP code
-
-;; Copyright (C) 1999, 2000, 2001, 2003, 2004 Turadg Aleahmad
-;;               2008 Aaron S. Hawley
-;;               2011, 2012, 2013, 2014 Eric James Michael Ritz
 
 ;;; Author: Eric James Michael Ritz
 ;;; URL: https://github.com/ejmr/php-mode
@@ -2468,7 +2462,7 @@ The output will appear in the buffer *PHP*."
 (eval-after-load 'php-mode
   '(font-lock-add-keywords 'php-mode '((php-annotations-font-lock-find-annotation (2 'php-annotations-annotation-face t)))))
 
-
+
 
 ;;; Correct the behavior of `delete-indentation' by modifying the
 ;;; logic of `fixup-whitespace'.
@@ -2485,7 +2479,7 @@ The output will appear in the buffer *PHP*."
 
 (ad-activate 'fixup-whitespace)
 
-
+
 ;;; added by bigi
 (setq auto-mode-alist
       (append
@@ -2494,10 +2488,5 @@ The output will appear in the buffer *PHP*."
         ("\\.phpr"    . php-mode)
          ) auto-mode-alist))
 
-;;;###autoload 
-;(dolist (pattern '("\\.php[s345t]?\\'" "\\.phtml\\'" "\\.php[rm]?\\'"
-;  "Amkfile" "\\.amk$")) (add-to-list 'auto-mode-alist `(,pattern
-;  . php-mode) t)) (provide 'php-mode)
 
 ;;; php-mode.el ends here
-
