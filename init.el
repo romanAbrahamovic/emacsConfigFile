@@ -15,8 +15,8 @@
 (setq casey-linux (featurep 'x))
 (setq casey-win32 (not (or casey-aquamacs casey-linux)))
 
-;(setq casey-todo-file "w:/handmade/code/todo.txt")
-;(setq casey-log-file "w:/handmade/code/log.txt")
+(setq casey-todo-file "/home/.emacs.d/txt/todo.xt")
+(setq casey-log-file "/home/.emacs.d/txt/log.txt")
 
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "midnight blue")
@@ -27,10 +27,10 @@
 (setq enable-local-variables nil)
 (setq casey-font "outline-DejaVu Sans Mono")
 
-;(when casey-win32 
-;  (setq casey-makescript "build.bat")
-;  (setq casey-font "outline-Liberation Mono")
-;)
+(when casey-win32 
+ (setq casey-makescript "build.bat")
+ (setq casey-font "outline-Liberation Mono")
+)
 
 (when casey-aquamacs 
   (cua-mode 0) 
@@ -45,13 +45,14 @@
   (setq mac-command-key-is-meta t)
   (scroll-bar-mode nil)
   (setq mac-pass-command-to-system nil)
- ; (setq casey-makescript "./build.macosx")
+  (setq casey-makescript "./build.macosx")
 )
 
 (when casey-linux
-;  (setq casey-makescript "./build.linux")
+  (setq casey-makescript "./build.linux")
   (display-battery-mode 1)
 )
+
 
 ; Turn off the toolbar
 (tool-bar-mode 0)
@@ -234,11 +235,11 @@
      (pop-mark)
      (insert "_H)\n")
      (insert "/* ========================================================================\n")
-     (insert "   ***|Lions Development Team|*** $\n")
-     (insert "   ***|www.lionsdevteam.com|*** $\n")
+     (insert "   MightCore Development Team $\n")
+     (insert "   www.mightcore.com|*** $\n")
      (insert "   ")
      (insert "   @bigi $\n")
-     (insert "   *!* Copyright Lions Development Team *!* $\n")
+     (insert "    Copyright MightCore Development Team  $\n")
      (insert "   ======================================================================== */\n")
      (insert "\n")
      (insert "#define ")
@@ -255,11 +256,11 @@
      (interactive)
      (setq BaseFileName (file-name-sans-extension (file-name-nondirectory buffer-file-name)))
      (insert "/* ========================================================================\n")
-      (insert "   ***|MightCore Development Team|*** $\n")
-     (insert "   ***|www.mightcore.com|*** $\n")
+      (insert "   MightCore Development Team $\n")
+     (insert "    www.mightcore.com $\n")
      (insert "   ")
      (insert "   @bigi $\n")
-     (insert "   *!* Copyright MightCore Development Team *!* $\n")
+     (insert "    Copyright MightCore Development Team $\n")
      (insert "   ======================================================================== */\n")
   )
 
@@ -610,51 +611,6 @@
 
 (defconst php-mode-modified "2013-12-03"
   "PHP Mode build date.")
-
-;;; License
-
-;; This file is free software; you can redistribute it and/or
-;; modify it under the terms of the GNU General Public License
-;; as published by the Free Software Foundation; either version 3
-;; of the License, or (at your option) any later version.
-
-;; This file is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with this file; if not, write to the Free Software
-;; Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-;; 02110-1301, USA.
-
-;;; Usage
-
-;; Put this file in your Emacs lisp path (eg. site-lisp) and add to
-;; your .emacs file:
-;;
-;;   (require 'php-mode)
-
-;; To use abbrev-mode, add lines like this:
-;;   (add-hook 'php-mode-hook
-;;     '(lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")))
-
-;; To make php-mode compatible with html-mode, see http://php-mode.sf.net
-
-;; Many options available under Help:Customize
-;; Options specific to php-mode are in
-;;  Programming/Languages/Php
-;; Since it inherits much functionality from c-mode, look there too
-;;  Programming/Languages/C
-
-;;; Commentary:
-
-;; PHP mode is a major mode for editing PHP source code.  It's an
-;; extension of C mode; thus it inherits all C mode's navigation
-;; functionality.  But it colors according to the PHP grammar and
-;; indents according to the PEAR coding guidelines.  It also includes
-;; a couple handy IDE-type features such as documentation search and a
-;; source and class browser.
 
 ;;; Code:
 
@@ -2462,7 +2418,7 @@ The output will appear in the buffer *PHP*."
 (eval-after-load 'php-mode
   '(font-lock-add-keywords 'php-mode '((php-annotations-font-lock-find-annotation (2 'php-annotations-annotation-face t)))))
 
-
+
 
 ;;; Correct the behavior of `delete-indentation' by modifying the
 ;;; logic of `fixup-whitespace'.
@@ -2479,7 +2435,7 @@ The output will appear in the buffer *PHP*."
 
 (ad-activate 'fixup-whitespace)
 
-
+
 ;;; added by bigi
 (setq auto-mode-alist
       (append
