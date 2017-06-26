@@ -260,9 +260,9 @@
   (cond ((file-exists-p buffer-file-name) t)
         ((string-match "[.]hin" buffer-file-name) (casey-source-format))
         ((string-match "[.]cin" buffer-file-name) (casey-source-format))
-        ((string-match "[.]h" buffer-file-name) (casey-header-format))
+        ((string-match "[.]h"   buffer-file-name) (casey-header-format))
         ((string-match "[.]cpp" buffer-file-name) (casey-source-format))
-        ((string-match "[.]c" buffer-file-name) (casey-source-format))
+        ((string-match "[.]c"   buffer-file-name) (casey-source-format))
         ((string-match "[.]php" buffer-file-name) (casey-source-format))
         ((string-match "[.]phpr" buffer-file-name) (casey-source-format))
         ((string-match "[.]phpm" buffer-file-name) (casey-source-format))
@@ -590,12 +590,14 @@
 (add-hook 'window-setup-hook 'post-load-stuff t)
 
 
-
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;; ADDED FOR PHP 
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;;;;;;;;;;;;;; ADDED FOR PHP ;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 
 (defconst php-mode-version-number "1.13.1"
   "PHP Mode version number.")
